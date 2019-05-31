@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#header {
+		    background-color:black;
+		    color:white;
+		    text-align:center;
+		    padding:5px;
+		}
+		#nav {
+		    line-height:30px;
+		    background-color:#eeeeee;
+		    height:800px;
+		    width:150px;
+		    float:left;
+		    padding:5px;	      
+		}
+		#section {
+		    width:350px;
+		    float:left;
+		    padding:10px;	 	 
+		}
+		#footer {
+		    background-color:black;
+		    color:white;
+		    clear:both;
+		    text-align:center;
+		   padding:5px;	 	 
+		}
+		</style>
+	</head>
+	<body>
+
+		<div id="header">
+			<h1>Cambio de tutor</h1>
+		</div>
+		<div id="nav">
+			<!--<p><a href="cambioTutor/respuesta/">Consultar Resultados</a></p><br>-->
+		</div>
+
+		<div id="section">
+			<form action="consulta" method="get">
+				<label>
+					<p>Seleccione los profesores de su preferencia:		</p>	
+				</label>
+				
+				<input type="checkbox" name="profesores" value="prof1">Roberto Zagal Flores<br>
+				<input type="checkbox" name="profesores" value="prof2">Marco A. Barranco<br>
+				<input type="checkbox" name="profesores" value="prof3">Nayeli Vega<br>
+				<input type="checkbox" name="profesores" value="prof4">Hector Paz<br>
+				<input type="checkbox" name="profesores" value="prof5">Cesar Mujica<br>
+				<input type="checkbox" name="profesores" value="prof6">Fernando Aguilar<br>
+				<input type="checkbox" name="profesores" value="prof7">Lule Tirado<br>	
+				<input type="checkbox" name="profesores" value="prof8">Mario A. Ramirez<br>
+				<input type="checkbox" name="profesores" value="prof9">Juan Carlos Martinez<br>
+			
+
+				<label>
+					<p>Motivos de cambio:		</p>	
+				</label>
+
+				<input type="radio" name="group1" value="opc1" checked> No me agrada su forma de trabajo<br>
+				<input type="radio" name="group1" value="opc2"> Los horarios no me son favorables<br>
+				<input type="radio" name="group1" value="opc2"> No es el tutor que yo elegi<br>
+				
+				<p></p>
+				<input type="button" value=" Cancelar " />
+				<input type="submit" value=" Enviar ">
+			</form>
+		</div>
+
+		<div id="footer">
+			Tutorias Escom
+		</div>
+
+	</body>
+</html>

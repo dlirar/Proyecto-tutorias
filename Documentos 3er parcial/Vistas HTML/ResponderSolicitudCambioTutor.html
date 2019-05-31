@@ -1,0 +1,150 @@
+<!-- Idea: La tabla se creará de forma dinámica con cada solicitud recibida, así como las que han sido aceptadas y rechazadas. 
+
+Se me ocurre que las solicitudes del tutorado sean enviadas al coordinador como una cadena xml por medio de un parser. Cuando el coordinador reciba una solicitud nueva, se abre el documento que tiene como base (se armaría uno> y se agrega un elemento "<solicitud>" (por poner un ejemplo). De este modo la tabla quedaría fácilmente mostrada en pantalla con una función de xsl:foreach (con sus respectivos botones) :P 
+
+Los botones Aceptar y Rechazar, al ser presionados, borraran el elemento "<solicitud>" del xml base y, en el caso de Aceptar, mandar una solicitud para actualizar la información de la base de datos con la relación entre tutores y tutorados. En el caso de Rechazar, solo desaparecería el elemento "<solicitud>".
+
+El botón Cancelar solo nos redirecciona a la pantalla anterior.
+
+Trejo García Kevin
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>
+        Responder solicitud de cambio de tutor
+    </title>
+</head>
+<body>
+    <h1> (CU#11) Responder a solicitudes de cambio de tutor. </h1>
+    <div>
+        
+        <table border= 3px>
+            <tr>
+            <td>Nombre del tutorado</td>
+            <td> Tutor que solicita</td>
+            <td>Motivos</td>
+            </tr>
+            <tr>
+            <td>*Nombre del tutorado*</td>
+            <td>*Nombre del tutor*</td>
+            <td>*Motivos*</td>
+            <td>
+                <button>Aceptar</button>
+                <td>
+                <button>Rechazar</button>
+                </td>
+            </td>
+            </tr>
+            <tr>
+            <td>*Nombre del tutorado*</td>
+            <td>*Nombre del tutor*</td>
+            <td>*Motivos*</td>
+            <td>
+                <button>Aceptar</button>
+                <td>
+                <button>Rechazar</button>
+                </td>
+            </td>
+            </tr>
+            <tr>
+            <td>*Nombre del tutorado*</td>
+            <td>*Nombre del tutor*</td>
+            <td>*Motivos*</td>
+            <td>
+                <button>Aceptar</button>
+                <td>
+                <button>Rechazar</button>
+                </td>
+            </td>
+            </tr>
+            <tr>
+            <td>*Nombre del tutorado*</td>
+            <td>*Nombre del tutor*</td>
+            <td>*Motivos*</td>
+            <td>
+                <button>Aceptar</button>
+                <td>
+                <button>Rechazar</button>
+                </td>
+            </td>
+            </tr>
+            <tr>
+            <td>*Nombre del tutorado*</td>
+            <td>*Nombre del tutor*</td>
+            <td>*Motivos*</td>
+            <td>
+                <button>Aceptar</button>
+                <td>
+                <button>Rechazar</button>
+                </td>
+            </td>
+            </tr>
+            <tr>
+            <td>*Nombre del tutorado*</td>
+            <td>*Nombre del tutor*</td>
+            <td>*Motivos*</td>
+            <td>
+                <button>Aceptar</button>
+                <td>
+                <button>Rechazar</button>
+                </td>
+            </td>
+            </tr>
+            <tr>
+            <td>*Nombre del tutorado*</td>
+            <td>*Nombre del tutor*</td>
+            <td>*Motivos*</td>
+            <td>
+                <button>Aceptar</button>
+                <td>
+                <button>Rechazar</button>
+                </td>
+            </td>
+            </tr>
+            <tr>
+            <td>*Nombre del tutorado*</td>
+            <td>*Nombre del tutor*</td>
+            <td>*Motivos*</td>
+            <td>
+                <button>Aceptar</button>
+                <td>
+                <button>Rechazar</button>
+                </td>
+            </td>
+            </tr>
+            <tr>
+            <td>*Nombre del tutorado*</td>
+            <td>*Nombre del tutor*</td>
+            <td>*Motivos*</td>
+            <td>
+                <button>Aceptar</button>
+                <td>
+                <button>Rechazar</button>
+                </td>
+            </td>
+            </tr>
+            <tr>
+            <td>*Nombre del tutorado*</td>
+            <td>*Nombre del tutor*</td>
+            <td>*Motivos*</td>
+            <td>
+                <button>Aceptar</button>
+                <td>
+                <button>Rechazar</button>
+                </td>
+            </td>
+            </tr>
+            
+        </table>
+        <br/>
+        <br/>
+        <button align = "center">Cancelar</button>
+        
+        
+        
+    </div>
+</body>
+</html>

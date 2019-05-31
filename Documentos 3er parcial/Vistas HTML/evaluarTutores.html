@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<script> 
+
+			function validargrupos(formulario) {
+   				var grupos = [];
+   				var i;
+    			for (i = 0; elem = formulario.elements[i]; i++) {
+        			if (elem.type == "radio") {
+        			    if (!grupos[elem.name]) {
+                			grupos[elem.name] = elem.checked;
+            			}
+        			}
+    			}
+    			for (grupo in grupos) {
+        			if (!grupos[grupo]) {
+        				alert("Error! No se ha seleccionado una opcion en punto: " + grupo);
+            			return false;
+        			}
+    			}
+    
+			    formulario.submit()
+    
+			}
+			
+		</script> 
+		<style>
+			#header {
+		    background-color:black;
+		    color:white;
+		    text-align:center;
+		    padding:5px;
+		}
+		#nav {
+		    line-height:30px;
+		    background-color:#eeeeee;
+		    height:1200px;
+		    width:100px;
+		    float:left;
+		    padding:5px;	      
+		}
+		#section {
+		    width:1250px;
+		    float:left;
+		    padding:50px;	 	 
+		}
+		#footer {
+		    background-color:black;
+		    color:white;
+		    clear:both;
+		    text-align:center;
+		   padding:5px;	 	 
+		}
+		table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+#t{
+	padding: 5px;
+    text-align: center;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th	{
+    background-color: black;
+    color: white;
+}
+		</style>
+
+		<!--META HTTP-EQUIV="REFRESH" CONTENT="1 ;URL=evaluarTutores.html"/-->
+	</head>
+	<body>
+
+		<div id="header">
+			<h1>Evaluar tutor</h1>
+		</div>
+		<div id="nav">
+			<!--<p><a href="cambioTutor/respuesta/">Consultar Resultados</a></p><br>-->
+		</div>
+
+		<div id="section">
+			<label>
+					<p>Profesor a evaluar:	Nombre_del_tutor_asignado_asignado(BD)</p>	
+				</label>
+			<form name="eval" action="evaluacion" method="get">
+				<label>
+					<p>Tu opinion respecto al tutor es importante. Selecciona la opcion que corresponde a tu respuesta en cada afirmacion.		</p>	
+				</label>
+				
+				<table id="t01">
+					<tr>
+						<th></th>
+						<th>El tutor...</th>		
+						<th>Si</th>
+						<th>No</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Te indico el plan de tutoria</td>		
+						<td id="t"><input type="radio" name="1" value="opc1"></td>
+						<td id="t"><input type="radio" name="1" value="opc2"></td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Te indico el cronograma de sesiones para la tutoria para el periodo escolar</td>		
+						<td id="t"><input type="radio" name="2" value="opc1"></td>
+						<td id ="t"><input type="radio" name="2" value="opc2"></td>
+					</tr>
+				</table>
+				<br><br>
+				<table id="t01">
+					<tr>
+						<th></th>
+						<th>El tutor...</th>		
+						<th>Nunca</th>
+						<th>Raras veces</th>
+						<th>Frecuentemente</th>
+						<th>Casi siempre</th>
+						<th>Siempre</th>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Te oriento con base en el mapa curricular del programa academico(carrera)</td>		
+						<td id="t"><input type="radio" name="3" value="opc1" align="center"></td>
+						<td id="t"><input type="radio" name="3" value="opc2"></td>
+						<td id="t"><input type="radio" name="3" value="opc3"></td>
+						<td id="t"><input type="radio" name="3" value="opc4"></td>
+						<td id="t"><input type="radio" name="3" value="opc5"></td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Te oriento con base en el reglamento General de Estudios del IPN</td>	
+						<td id="t"><input type="radio" name="4" value="opc1"></td>
+						<td id="t"><input type="radio" name="4" value="opc2"></td>
+						<td id="t"><input type="radio" name="4" value="opc3"></td>
+						<td id="t"><input type="radio" name="4" value="opc4"></td>
+						<td id="t"><input type="radio" name="4" value="opc5"></td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Tuvo una actitud de respeto durante todo el periodo escolar</td>		
+						<td id="t"><input type="radio" name="5" value="opc1"></td>
+						<td id="t"><input type="radio" name="5" value="opc2"></td>
+						<td id="t"><input type="radio" name="5" value="opc3"></td>
+						<td id="t"><input type="radio" name="5" value="opc4"></td>
+						<td id="t"><input type="radio" name="5" value="opc5"></td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Cumplio con la programacion de sesiones para la tutoria</td>		
+						<td id="t"><input type="radio" name="6" value="opc1"></td>
+						<td id="t"><input type="radio" name="6" value="opc2"></td>
+						<td id="t"><input type="radio" name="6" value="opc3"></td>
+						<td id="t"><input type="radio" name="6" value="opc4"></td>
+						<td id="t"><input type="radio" name="6" value="opc5"></td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>Asistio puntualmente a las sesiones de tutoria</td>		
+						<td id="t"><input type="radio" name="7" value="opc1"></td>
+						<td id="t"><input type="radio" name="7" value="opc2"></td>
+						<td id="t"><input type="radio" name="7" value="opc3"></td>
+						<td id="t"><input type="radio" name="7" value="opc4"></td>
+						<td id="t"><input type="radio" name="7" value="opc5"></td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>Te informo sobre los servicios estudiantiles que hay en tu Unidad Academica</td>		
+						<td id="t"><input type="radio" name="8" value="opc1"></td>
+						<td id="t"><input type="radio" name="8" value="opc2"></td>
+						<td id="t"><input type="radio" name="8" value="opc3"></td>
+						<td id="t"><input type="radio" name="8" value="opc4"></td>
+						<td id="t"><input type="radio" name="8" value="opc5"></td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>Mostro disposicion para atenderte aun fuera de sesion de tutoria programada</td>		
+						<td id="t"><input type="radio" name="9" value="opc1"></td>
+						<td id="t"><input type="radio" name="9" value="opc2"></td>
+						<td id="t"><input type="radio" name="9" value="opc3"></td>
+						<td id="t"><input type="radio" name="9" value="opc4"></td>
+						<td id="t"><input type="radio" name="9" value="opc5"></td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>Mostro interes por tu trayectoria academica</td>		
+						<td id="t"><input type="radio" name="10" value="opc1"></td>
+						<td id="t"><input type="radio" name="10" value="opc2"></td>
+						<td id="t"><input type="radio" name="10" value="opc3"></td>
+						<td id="t"><input type="radio" name="10" value="opc4"></td>
+						<td id="t"><input type="radio" name="10" value="opc5"></td>
+					</tr>
+					<tr>
+						<td>11</td>
+						<td>Mostro equidad de genero en su trato contigo</td>		
+						<td id="t"><input type="radio" name="11" value="opc1"></td>
+						<td id="t"><input type="radio" name="11" value="opc2"></td>
+						<td id="t"><input type="radio" name="11" value="opc3"></td>
+						<td id="t"><input type="radio" name="11" value="opc4"></td>
+						<td id="t"><input type="radio" name="11" value="opc5"></td>
+					</tr>
+					<tr>
+						<td>12</td>
+						<td>Te comunico los logros que alcanzaste en la tutoria en cada periodo de evaluacion</td>		
+						<td id="t"><input type="radio" name="12" value="opc1"></td>
+						<td id="t"><input type="radio" name="12" value="opc2"></td>
+						<td id="t"><input type="radio" name="12" value="opc3"></td>
+						<td id="t"><input type="radio" name="12" value="opc4"></td>
+						<td id="t"><input type="radio" name="12" value="opc5"></td>
+					</tr>
+					<tr>
+						<td>13</td>
+						<td>Busco la colaboracion de tus profesores para la solucion de tu problematica academica</td>		
+						<td id="t"><input type="radio" name="13" value="opc1"></td>
+						<td id="t"><input type="radio" name="13" value="opc2"></td>
+						<td id="t"><input type="radio" name="13" value="opc3"></td>
+						<td id="t"><input type="radio" name="13" value="opc4"></td>
+						<td id="t"><input type="radio" name="13" value="opc5"></td>
+					</tr>
+					<tr>
+						<td>14</td>
+						<td>Empleo recursos de la web para asesorarte</td>		
+						<td id="t"><input type="radio" name="14" value="opc1"></td>
+						<td id="t"><input type="radio" name="14" value="opc2"></td>
+						<td id="t"><input type="radio" name="14" value="opc3"></td>
+						<td id="t"><input type="radio" name="14" value="opc4"></td>
+						<td id="t"><input type="radio" name="14" value="opc5"></td>
+					</tr>
+				</table>
+				<br><br>
+				<table id="t01">
+					<tr>
+						<th></th>
+						<th>Consideras que tu tutor...</th>		
+						<th>Definitivamente no</th>
+						<th>No</th>
+						<th>Si</th>
+						<th>Definitivamente si</th>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>Contribuyo a la mejora de tu desempenio escolar</td>		
+						<td id="t"><input type="radio" name="15" value="opc1"></td>
+						<td id="t"><input type="radio" name="15" value="opc2"></td>
+						<td id="t"><input type="radio" name="15" value="opc3"></td>
+						<td id="t"><input type="radio" name="15" value="opc4"></td>
+					</tr>
+					<tr>
+						<td>16</td>
+						<td>Tiene habilidades para asesorar a alumnos con dificultades academicas</td>		
+						<td id="t"><input type="radio" name="16" value="opc1"></td>
+						<td id="t"><input type="radio" name="16" value="opc2"></td>
+						<td id="t"><input type="radio" name="16" value="opc3"></td>
+						<td id="t"><input type="radio" name="16" value="opc4"></td>
+					</tr>
+					<tr>
+						<td>17</td>
+						<td>Promovio el desarrollo de tus habilidades para el aprendizaje autonomo</td>		
+						<td id="t"><input type="radio" name="17" value="opc1"></td>
+						<td id="t"><input type="radio" name="17" value="opc2"></td>
+						<td id="t"><input type="radio" name="17" value="opc3"></td>
+						<td id="t"><input type="radio" name="17" value="opc4"></td>
+					</tr>
+					<tr>
+						<td>18</td>
+						<td>Te motivo para permanecer en el Programa Institucional de Tutorias</td>		
+						<td id="t"><input type="radio" name="18" value="opc1"></td>
+						<td id="t"><input type="radio" name="18" value="opc2"></td>
+						<td id="t"><input type="radio" name="18" value="opc3"></td>
+						<td id="t"><input type="radio" name="18" value="opc4"></td>
+					</tr>
+					<tr>
+						<td>19</td>
+						<td>Atendio oportunamente las problematicas sobre tu trayectoria escolar</td>		
+						<td id="t"><input type="radio" name="19" value="opc1"></td>
+						<td id="t"><input type="radio" name="19" value="opc2"></td>
+						<td id="t"><input type="radio" name="19" value="opc3"></td>
+						<td id="t"><input type="radio" name="19" value="opc4"></td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td>Tiene los conocimientos sobre normatividad del IPN para orientar a los alumnos.</td>		
+						<td id="t"><input type="radio" name="20" value="opc1"></td>
+						<td id="t"><input type="radio" name="20" value="opc2"></td>
+						<td id="t"><input type="radio" name="20" value="opc3"></td>
+						<td id="t"><input type="radio" name="20" value="opc4"></td>
+					</tr>
+					<tr>
+						<td>21</td>
+						<td>Tiene los conocimientos sobre tramites de gestion escolar para orientar a los alumnos</td>		
+						<td id="t"><input type="radio" name="21" value="opc1"></td>
+						<td id="t"><input type="radio" name="21" value="opc2"></td>
+						<td id="t"><input type="radio" name="21" value="opc3"></td>
+						<td id="t"><input type="radio" name="21" value="opc4"></td>
+					</tr>
+					<tr>
+						<td>22</td>
+						<td>Es recomendable como tutor permanente en el PIT</td>		
+						<td id="t"><input type="radio" name="22" value="opc1"></td>
+						<td id="t"><input type="radio" name="22" value="opc2"></td>
+						<td id="t"><input type="radio" name="22" value="opc3"></td>
+						<td id="t"><input type="radio" name="22" value="opc4"></td>
+					</tr>
+					<tr>
+						<td>23</td>
+						<td>Es recomendable como tutor para la recuperacion academica de alumnos</td>		
+						<td id="t"><input type="radio" name="23" value="opc1"></td>
+						<td id="t"><input type="radio" name="23" value="opc2"></td>
+						<td id="t"><input type="radio" name="23" value="opc3"></td>
+						<td id="t"><input type="radio" name="23" value="opc4"></td>
+					</tr>
+					<tr>
+						<th></th>
+						<th>Respecto al Programa de Tutorias..</th>		
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+					<tr>
+						<td>24</td>
+						<td>Participarias como alumno tutorado en el proximo periodo escolar</td>		
+						<td id="t"><input type="radio" name="24" value="opc1"></td>
+						<td id="t"><input type="radio" name="24" value="opc2"></td>
+						<td id="t"><input type="radio" name="24" value="opc3"></td>
+						<td id="t"><input type="radio" name="24" value="opc4"></td>
+					</tr><tr>
+						<td>25</td>
+						<td>Recomendarias a tus companieros incorporarse al programa</td>		
+						<td id="t"><input type="radio" name="25" value="opc1"></td>
+						<td id="t"><input type="radio" name="25" value="opc2"></td>
+						<td id="t"><input type="radio" name="25" value="opc3"></td>
+						<td id="t"><input type="radio" name="25" value="opc4"></td>
+					</tr>
+					
+				</table>
+				<br><br>
+							
+				<p></p>
+				<input type="button" value=" Cancelar " />
+				<input type="button" value=" Enviar " onClick="validargrupos(eval)">
+			</form>
+		</div>
+
+		<div id="footer">
+			Tutorias Escom
+		</div>
+
+	</body>
+</html>
